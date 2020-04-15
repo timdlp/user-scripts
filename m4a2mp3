@@ -1,0 +1,5 @@
+#!/bin/bash
+for file in *.m4a; do
+  ffmpeg -i "$file" -ab 320k -ac 2 "${file%.*}.mp3"
+  rm "$file"
+done
